@@ -9,5 +9,4 @@ def hello():
 
 
 if __name__ == '__main__':
-    PORT = int(os.environ.get('PORT', '5002'))
-    app.run(port=PORT)
+    app.run(port='5002')
