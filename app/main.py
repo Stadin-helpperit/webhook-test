@@ -10,7 +10,7 @@ def hello():
 
 @app.route('/webhook', methods=['POST', 'GET'])
 def webhook():
-    req = request.get_json(silent=True, force=True)
+    req = request.get_json()
 
     fulfillmentText = 'Success'
 
@@ -21,7 +21,15 @@ def webhook():
     print(userInput)
 
     return {
-        "fulfillmentText": fulfillmentText
+        "fulfillmentMessage": [
+            {
+                "text": {
+                    "fulfillmentText": fulfillmentText
+
+                }
+            }
+        ]
+
 
     }
 
