@@ -13,7 +13,7 @@ def webhook():
     req = request.get_json(force=True)
 
     print(req)
-
+    # message for response
     fulfillmentText = 'Success'
 
     query_result = req.get('queryResult')
