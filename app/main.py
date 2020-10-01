@@ -23,10 +23,10 @@ def webhook():
     print(userInput)
 
     return {
-        "fulfillmentMessage": [
+        "fulfillmentMessages": [
             {
                 "text": {
-                    "fulfillmentText": fulfillmentText
+                    "text": [fulfillmentText]
 
                 }
             }
