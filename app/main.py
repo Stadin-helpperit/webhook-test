@@ -10,11 +10,13 @@ def hello():
 
 @app.route('/webhook', methods=['POST', 'GET'])
 def webhook():
-    req = request.get_json()
+    req = request.get_json(force=True)
+
+    print(req)
 
     fulfillmentText = 'Success'
 
-    query_result = req.get('query_Result')
+    query_result = req.get('queryResult')
 
     userInput = query_result.get('parameters').get('telegram-command')
 
